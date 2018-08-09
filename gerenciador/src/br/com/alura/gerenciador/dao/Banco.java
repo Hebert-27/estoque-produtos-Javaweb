@@ -55,5 +55,13 @@ public class Banco {
 		return lista;
 	}
 	
+	/*public void Deletar(int id) {
+		String query = "DELETE FROM produtos WHERE id=''"
+	}*/
+	
+	public int SelecionarId(int id) {
+		String query = "SELECT FROM produtos"
+	}
+	
 }
 	

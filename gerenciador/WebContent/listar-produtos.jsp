@@ -9,22 +9,44 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Listagem dos Produtos</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script type="text/javasctipt" src="<c:url value="/js/jquery-3.3.1.min.js" />"></script>
   <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
+<script>
+function remove(id){
+		$.get('remover-produto?f.id=' + id, function(){
+			alert('produto removido com sucesso');
+		});
+	}
+</script>
 <c:import url="cabecalho.jsp"/>
 <div class="container" style="margin-top: 5%">
 	<h1 style="text-align: center">Listagem de Produtos</h1>
 	<jsp:useBean id="dao" class="br.com.alura.gerenciador.dao.Banco"/>
-	<table class="table">
+	<table class="table" style="text-align: center">
 	<tr>
-    	<th>ID</th>
-    	<th>Nome</th>
+    	<th style="text-align: center">Id</th>
+    	<th style="text-align: center">Nome</th>
+    	<th style="text-align: center">Valor</th>
+    	<th style="text-align: center">Descrição</th>
+    	<th style="text-align: center">Categoria</th>
   	</tr>
 		<c:forEach var="f" items="${dao.Listar()}">
 			<tr>
 				<td>${f.id}</td>
 				<td>${f.nome}</td>
+				<td>${f.valor}</td>
+				<td>${f.descricao}</td>
+				<td>${f.categoria}</td>
+				<td>
+					<button name="alterar" value="alterar" class="btn btn-primary">Alterar</button>
+				</td>
+				<td>
+					<form action="remover-produto" method="POST">
+						<button class="btn btn-danger" onclick="remove(${f.id});">Remover</button>
+					</form>
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
