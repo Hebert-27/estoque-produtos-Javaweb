@@ -46,9 +46,6 @@ public class Banco {
 				formulario.setCategoria(resultado.getString("categoria"));
 				lista.add(formulario);
 			}
-			for(FormularioModel list : lista) {
-				System.out.println(list.getNome());
-			}
 		}catch(SQLException e) {
 			System.out.println("Erro: " +e);
 		}
@@ -59,9 +56,9 @@ public class Banco {
 		String query = "DELETE FROM produtos WHERE id=''"
 	}*/
 	
-	public int SelecionarId(int id) {
+	/*public int SelecionarId(int id) {
 		String query = "SELECT FROM produtos"
-	}
+	}*/
 	
 }
 	

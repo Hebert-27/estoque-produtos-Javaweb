@@ -15,7 +15,7 @@
 <body>
 <script>
 function remove(id){
-		$.get('remover-produto?f.id=' + id, function(){
+		$.get("http://localhost:8080/remover-produto", {id: f.id}, function(){
 			alert('produto removido com sucesso');
 		});
 	}
@@ -43,9 +43,7 @@ function remove(id){
 					<button name="alterar" value="alterar" class="btn btn-primary">Alterar</button>
 				</td>
 				<td>
-					<form action="remover-produto" method="POST">
-						<button class="btn btn-danger" onclick="remove(${f.id});">Remover</button>
-					</form>
+					<button class="btn btn-danger" onclick="remove(${f.id});">Remover</button>
 				</td>
 			</tr>
 		</c:forEach>
