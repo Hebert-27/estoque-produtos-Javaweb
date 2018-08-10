@@ -43,6 +43,8 @@ public class FormularioController extends HttpServlet{
 		req.setAttribute("formulario", formulario);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/paginas/cadastro-efetuado.jsp");
 		dispatcher.forward(req, resp);
+		
+		//teste
 	}
 }
 	
