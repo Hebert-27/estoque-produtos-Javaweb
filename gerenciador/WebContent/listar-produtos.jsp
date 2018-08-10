@@ -9,14 +9,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Listagem dos Produtos</title>
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script type="text/javasctipt" src="<c:url value="/js/jquery-3.3.1.min.js" />"></script>
-  <link href="css/index.css" rel="stylesheet">
+ <script type="text/javascript" src="<c:url value="js/jquery-3.3.1.min.js" />"></script>
 </head>
 <body>
 <script>
 function remove(id){
-		$.get("http://localhost:8080/remover-produto", {id: f.id}, function(){
-			alert('produto removido com sucesso');
+		$.get("http://localhost:8080/gerenciador/removercontroller", {id: id}, function(){
+			console.log(id);
 		});
 	}
 </script>
@@ -43,7 +42,7 @@ function remove(id){
 					<button name="alterar" value="alterar" class="btn btn-primary">Alterar</button>
 				</td>
 				<td>
-					<button class="btn btn-danger" onclick="remove(${f.id});">Remover</button>
+					<button class="btn btn-danger" onclick="remove(${f.id})">Remover</button>
 				</td>
 			</tr>
 		</c:forEach>

@@ -52,9 +52,19 @@ public class Banco {
 		return lista;
 	}
 	
-	/*public void Deletar(int id) {
-		String query = "DELETE FROM produtos WHERE id=''"
-	}*/
+	public void Deletar(String id) {
+		try {
+			Connection conexao = Conexao.getConnection();
+			String query = "DELETE FROM produtos WHERE id="+id;
+			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(query);
+			stmt.execute();
+			stmt.close();
+			conexao.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	/*public int SelecionarId(int id) {
 		String query = "SELECT FROM produtos"
