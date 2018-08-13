@@ -14,7 +14,8 @@
 <body>
 <script>
 function remove(id){
-		$.get("http://localhost:8080/gerenciador/removercontroller", {id: id}).done(function(){
+		$.get("http://localhost:8080/estoque-produtos-Javaweb/removercontroller", {id: id}).done(function(){
+			console.log(id);
 			document.location.reload();
 		});
 	}

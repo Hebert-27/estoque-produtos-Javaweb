@@ -27,12 +27,12 @@ public class RemoverController extends HttpServlet{
 		
 		System.out.println(id);
 		
-		try {
+		/*try {
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		banco.Deletar(id);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/listar-produtos.jsp");
