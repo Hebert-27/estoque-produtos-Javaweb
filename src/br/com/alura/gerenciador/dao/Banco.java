@@ -66,9 +66,24 @@ public class Banco {
 		}
 	}
 	
-	/*public int SelecionarId(int id) {
-		String query = "SELECT FROM produtos"
-	}*/
+	public void AlterarProduto(int id, String nome, double valor, String descricao) {
+		try {
+			Connection conexao = Conexao.getConnection();
+			String query = "UPDATE produtos SET nome=?, valor=?, descricao=? WHERE=?";
+			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(query);
+			stmt.setString(1, nome);
+			stmt.setDouble(2, valor);
+			stmt.setString(3, descricao);
+			stmt.setInt(4, id);
+			
+			stmt.execute();
+			stmt.close();
+			conexao.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 }
 	
