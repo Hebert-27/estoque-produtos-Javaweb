@@ -1,5 +1,5 @@
 <%@page import="br.com.alura.gerenciador.dao.Banco" %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,6 +19,12 @@ function remove(id){
 			document.location.reload();
 		});
 	}
+	
+function alterar(id, nome, valor, descricao, categoria){
+	$.get("http://localhost:8080/estoque-produtos-Javaweb/alterar-produto", {id: id, nome: nome, valor: valor, descricao: descricao, categoria: categoria}).done(function(){
+		window.location.href = "http://localhost:8080/estoque-produtos-Javaweb/alterar-produto.jsp";
+	});
+}
 </script>
 <c:import url="cabecalho.jsp"/>
 <div class="container" style="margin-top: 5%">
@@ -40,7 +46,7 @@ function remove(id){
 				<td>${f.descricao}</td>
 				<td>${f.categoria}</td>
 				<td>
-					<button name="alterar" value="alterar" class="btn btn-primary">Alterar</button>
+					<button class="btn btn-primary" onclick="alterar('${f.id}', '${f.nome}', '${f.valor}', '${f.descricao}', '${f.categoria}');" value="Alterar">Alterar</button>
 				</td>
 				<td>
 					<button class="btn btn-danger" onclick="remove(${f.id})">Remover</button>

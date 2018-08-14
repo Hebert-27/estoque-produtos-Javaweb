@@ -12,7 +12,7 @@
 <div class="container" style="margin-top: 5%">
 	<h1 style="text-align: center">Formulário de Cadastro</h1>
 	<table class="table">
-		<form action="cadastro-efetuado" method="POST">
+		<form action="/cadastro-efetuado" method="POST">
 			<tr>
 				<td>Nome:</td>
 			</tr>
