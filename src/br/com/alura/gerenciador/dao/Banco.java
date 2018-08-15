@@ -66,15 +66,15 @@ public class Banco {
 		}
 	}
 	
-	public void AlterarProduto(int id, String nome, double valor, String descricao) {
+	public void AlterarProduto(FormularioModel formulario) {
 		try {
 			Connection conexao = Conexao.getConnection();
 			String query = "UPDATE produtos SET nome=?, valor=?, descricao=? WHERE=?";
 			PreparedStatement stmt = (PreparedStatement) conexao.prepareStatement(query);
-			stmt.setString(1, nome);
-			stmt.setDouble(2, valor);
-			stmt.setString(3, descricao);
-			stmt.setInt(4, id);
+			stmt.setString(1, formulario.getNome());
+			stmt.setDouble(2, formulario.getValor());
+			stmt.setString(3, formulario.getDescricao());
+			stmt.setInt(4, formulario.getId());
 			
 			stmt.execute();
 			stmt.close();

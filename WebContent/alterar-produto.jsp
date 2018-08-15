@@ -1,4 +1,4 @@
-<%@page import="br.com.alura.gerenciador.dao.FormularioModel"%>
+<%@page import="br.com.alura.gerenciador.web.AlterarController"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -18,8 +18,10 @@
 	<div class="container" style="margin-top: 5%">
 	<h1 style="text-align: center">Alteração de Produtos</h1>
 	<table class="table">
-		<form action="/concluir-alteracao" method="GET">
-			<input type="hidden" name="${formulario.getId()}" class="form-control"/>
+		<form action="concluir-alteracao" method="GET">
+			<tr>
+				<input type="text" name="nid" class="form-control" value="${}"/>
+			</tr>
 			<tr>
 				<td>Nome:</td>
 			</tr>

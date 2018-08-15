@@ -27,7 +27,7 @@ public class FormularioController extends HttpServlet{
 	FormularioModel formulario = new FormularioModel();
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//Obtendo os valores do Formulário
 		String nome = req.getParameter("nome");
 		double valor = Double.parseDouble(req.getParameter("valor"));
