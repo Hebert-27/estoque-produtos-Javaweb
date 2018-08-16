@@ -9,7 +9,6 @@
 <title>Home Page</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link href="css/index.css" rel="stylesheet">
 </head>
 <body>
 	<c:import url="cabecalho.jsp" />

@@ -21,7 +21,7 @@ function remove(id){
 	}
 	
 function alterar(id, nome, valor, descricao, categoria){
-	$.get("http://localhost:8080/estoque-produtos-Javaweb/alterar-produto", {id: id, nome: nome, valor: valor, descricao: descricao, categoria: categoria}).done(function(){
+		$.get("http://localhost:8080/estoque-produtos-Javaweb/alterarproduto", {id: id, nome: nome, valor: valor, descricao: descricao, categoria: categoria}).done(function(){
 		window.location.href = "http://localhost:8080/estoque-produtos-Javaweb/alterar-produto.jsp";
 	});
 }

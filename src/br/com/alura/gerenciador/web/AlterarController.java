@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.alura.gerenciador.model.FormularioModel;
 
-@WebServlet(urlPatterns="/alterar-produto")
+@WebServlet(urlPatterns="/alterarproduto")
 public class AlterarController extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;

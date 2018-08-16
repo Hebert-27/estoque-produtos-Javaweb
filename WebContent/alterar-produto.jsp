@@ -1,4 +1,5 @@
 <%@page import="br.com.alura.gerenciador.web.AlterarController"%>
+<%@page import="br.com.alura.gerenciador.model.FormularioModel"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,7 +21,7 @@
 	<table class="table">
 		<form action="concluir-alteracao" method="GET">
 			<tr>
-				<input type="text" name="nid" class="form-control" value="${}"/>
+				<td><input type="hidden" name="id" class="form-control" value="${formulario.getId()}"/></td>
 			</tr>
 			<tr>
 				<td>Nome:</td>
@@ -32,7 +33,7 @@
 				<td>Valor:</td>
 			</tr>
 			<tr>
-				<td><input type="number" name="valor" class="form-control"></td>
+				<td><input type="number" name="valor" class="form-control"/></td>
 			</tr>
 			<tr>
 				<td>Descrição:</td>
